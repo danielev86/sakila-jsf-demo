@@ -1,1 +1,4 @@
 docker_data/dbdata/
+sakila-customer-microservice/.mvn
+sakila-customer-microservice/.idea
+sakila-customer-microservice/target/
