@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 public class CustomerRepositoryTest {
 
@@ -25,5 +27,13 @@ public class CustomerRepositoryTest {
         Customer customer = customerRepository.findById(1L).get();
         Assertions.assertTrue("MARY".equalsIgnoreCase(customer.getFirstName()));
         Assertions.assertTrue("SMITH".equalsIgnoreCase(customer.getLastName()));
+    }
+
+    @Test
+    public void findByFirstNameAndLastNameAndEmail(){
+        List<Customer> customers = customerRepository.findCustomers("MARY",null, null);
+        Assertions.assertTrue(customers.size() == 1);
+        customers = customerRepository.findCustomers("MARY","SMITH", null);
+        Assertions.assertTrue(customers.size() == 1);
     }
 }
