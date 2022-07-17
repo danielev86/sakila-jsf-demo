@@ -15,6 +15,8 @@
 	<description>Customer microservice for sakila mysql db</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<apache.common.lang>3.12.0</apache.common.lang>
+		<apache.common.collections4>4.4</apache.common.collections4>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +44,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache.common.lang}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>${apache.common.collections4}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
