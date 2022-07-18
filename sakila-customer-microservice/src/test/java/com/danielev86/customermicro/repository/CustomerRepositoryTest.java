@@ -12,7 +12,6 @@ import java.util.List;
 
 @SpringBootTest
 public class CustomerRepositoryTest {
-
     private static final Logger logger = LoggerFactory.getLogger(CustomerRepositoryTest.class);
 
     @Autowired
