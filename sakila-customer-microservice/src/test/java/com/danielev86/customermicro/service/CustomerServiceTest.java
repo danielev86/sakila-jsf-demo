@@ -25,12 +25,14 @@ public class CustomerServiceTest {
         Assertions.assertTrue(customers.size() == 1);
         printLogCustomers(customers);
     }
+
     @Test
     public void getAllCustomerTest(){
         List<CustomerDTO> customers = customerService.getAllCustomers();
         Assertions.assertTrue(CollectionUtils.isNotEmpty(customers));
         printLogCustomers(customers);
     }
+
     @Test
     public void getCustomersByStoreTest(){
         List<CustomerDTO> customers = customerService.getCustomersInStore(1L);
@@ -39,6 +41,7 @@ public class CustomerServiceTest {
         customers = customerService.getCustomersInStore(4L);
         Assertions.assertNull(customers);
     }
+
     @Test
     public void getCustomerByIdTest(){
         CustomerDTO customer = customerService.getCustomerByID(1L);
@@ -47,6 +50,7 @@ public class CustomerServiceTest {
         customer = customerService.getCustomerByID(5000L);
         Assertions.assertNull(customer);
     }
+
     private void printLogCustomers(List<CustomerDTO> customers){
         if (CollectionUtils.isNotEmpty(customers)){
             customers.forEach(customer -> logger.info("Print customer info: "+ customer.toString()));
