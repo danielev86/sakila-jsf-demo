@@ -15,7 +15,6 @@ public class AddressDTO implements Serializable {
     private String district;
 
     private String postalCode;
-
     public Long getId() {
         return id;
     }
@@ -54,5 +53,16 @@ public class AddressDTO implements Serializable {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    @Override
+    public String toString() {
+        return "AddressDTO{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", district='" + district + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                '}';
     }
 }
