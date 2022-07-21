@@ -28,7 +28,7 @@ public class CustomerService extends AbstractService {
     }
 
     public List<CustomerDTO> getAllCustomers(){
-        List<Customer> customers = customerRepository.findAll();
+        List<Customer> customers = customerRepository.findAllByOrderByFirstNameAscLastNameAsc();
         List<CustomerDTO> customersDTO = CollectionUtils.isNotEmpty(customers)
                 ? (List<CustomerDTO>) getConverter().convert(customers
                 , TypeDescriptor.collection(List.class, TypeDescriptor.valueOf(Customer.class))

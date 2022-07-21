@@ -11,4 +11,6 @@ public interface CustomerRepository extends JpaRepository<Customer,Long>, Custom
 
     public List<Customer> findByStoreId(Long storeId);
 
+    public List<Customer> findAllByOrderByFirstNameAscLastNameAsc();
+
 }
